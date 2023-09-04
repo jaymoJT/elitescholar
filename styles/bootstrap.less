@@ -1,0 +1,447 @@
+/**
+ * @file plugins/themes/bootstrap3/index.less
+ *
+ * Copyright (c) 2014-2023 Simon Fraser University Library
+ * Copyright (c) 2003-2023 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Bootstrap 3 theme stylesheet. This is the base styles that must be
+ *   included for any theme.
+ *
+ */
+
+
+@import "../bootstrap/less/bootstrap.less";
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+// Support screen-reader only class from core OJS
+.pkp_screen_reader {
+    .sr-only;
+}
+
+
+body{
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+   font-size: 14px;
+   line-height: 20px;
+   background-color: #fff !important;
+  
+}
+
+.top-bar {
+    background: #2A2666;
+    color: #fff !important;
+}
+.btn-primary {
+    background: #2A2666;
+    color: #fff !important;
+    border: none !important;
+}
+.top-bar #nav .li >a {
+    color: #fff !important;
+}
+
+.primary-menu {
+    background-color: #2A2666 ;
+    color: #fff;
+    border-bottom: 5px solid green;
+}
+.header-banner {
+    // height:450% !important;
+}
+
+// Collapse margins on the site name in the header
+.navbar-header .site-name {
+    margin: 0;
+}
+
+// Resize the logo in the header
+.navbar-brand-logo img {
+    margin: 5px !important;
+    height: 225px;
+    ;
+}
+
+
+// Set color of links in navbar
+.navbar-default .nav > li > a {
+    color: @navbar-default-link-color;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    line-height: 1.5rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: @navbar-default-link-hover-color;
+        background: @navbar-default-link-hover-bg;
+    }
+
+    &:disabled {
+        color: @navbar-default-link-disabled-color;
+        background: @navbar-default-link-disabled-bg;
+    }
+}
+
+#main-navigation > li > a {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 800;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    color: #fff !important;
+}
+#navigationUser > li > a {
+    color: #fff !important;
+}
+
+// Page header subtitles
+.page-header small {
+    display: block;
+    margin-top: 0.5em;
+}
+
+// Wrap homepage journal description and additional content in margins
+.pkp_page_index .additional_content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+// Cap the height of an issue thumbnail image
+.issue-toc {
+
+    img {
+        max-height: 25em;
+    }
+}
+
+.article-summary .media-heading small {
+  font-size: 85%;
+}
+
+.article-details {
+
+    // Add space below authors on article page
+    .authors {
+        margin-bottom: 2em;
+    }
+
+  .author + .author {
+    margin-top: 0.5em;
+  }
+
+    .download .btn {
+      margin: 0.5em 0;
+      display: block;
+    }
+
+    // Add space between citation output and list of citation formats
+    #citationOutput {
+        margin-bottom: @panel-body-padding;
+        word-wrap: break-word;
+    }
+
+    // Hide the bibliography number produced by some CSL styles
+    .csl-left-margin {
+        display: none;
+    }
+}
+
+.article-sidebar {
+
+    // Ensure doi link doesn't extend beyond container
+    .doi {
+        word-wrap: break-word;
+    }
+}
+
+.article_count {
+    margin-bottom: 1em;
+}
+
+// Because we want to float the search right when the header is not collapsed
+// Why you no give us pull-md-right bootstrap?
+.pull-md-right {
+
+    @media(min-width: @screen-md) {
+        float: right;
+    }
+}
+
+/* Assuming your theme's stylesheet is linked to your HTML */
+h2 {
+    font-size: inherit !important; /* Inherit font size from parent */
+    font-weight: inherit !important; /* Inherit font weight from parent */
+    margin: inherit !important; /* Inherit margins from parent */
+    line-height: inherit !important; /* Inherit line height from parent */
+    font-weight: bold !important;
+    color: #2A2666 !important;
+    /* Add other properties as needed to match the <p> style */
+}
+
+
+// Override <h*> styles in media headings so that we can preserve accessible
+// heading structure without distorting the media style
+.media-heading h1,
+.media-heading h3,
+.media-heading h4,
+.media-heading h5,
+.media-heading h6,
+h1.media-heading,
+h3.media-heading,
+h4.media-heading,
+h5.media-heading,
+h6.media-heading {
+    font-size: @font-size-large; // Bootstrap variable
+}
+
+// Adjust lead text in media headings relative to the <h*> styles above
+.media .lead {
+    font-size: @font-size-base; // Bootstrap variable
+}
+
+// Media elements need a little bit more spacing in almost all themes
+.media {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+// Set a max size for media list thumbnails
+.media-left img {
+    max-width: 128px;
+}
+
+// Apply .panel and .list-group styling to  block output with lists
+.pkp_block {
+    
+   -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    visibility: visible !important;
+    overflow: visible !important;
+    
+   
+    
+    &:extend(.panel);
+    &:extend(.panel-default);
+
+    .title {
+      
+    background: #2A2666;
+    color: #fff !important;
+    //   padding-top: -2px !important;
+    //   padding-left: 10px;
+    //   padding-right: 10px;
+    //   border-bottom: 1px solid #e9e9e9;
+    //   border-left: 7px solid #2A2666;
+      border-top-right-radius: 8px;
+        
+        &:extend(.panel-heading);
+        &:extend(.panel-default > .panel-heading);
+        display: block;
+        margin-top: 0;
+    }
+    .title-text {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+        font-weight:bold !important;
+        color: #2A2666 !important;
+    }
+
+    ul {
+        &:extend(.list-group);
+        &:extend(.panel > .list-group);
+
+        li {
+            &:extend(.list-group-item);
+            &:extend(.panel > .list-group .list-group-item);
+        }
+    }
+
+    .content {
+      &:extend(.panel-body);
+    }
+}
+.block_content_wrapper {
+    padding: 15px !important;
+    background-color: transparent !important;
+}
+
+// Apply bootstrap table style to .cmp_table elements
+.cmp_table {
+  &:extend(.table all);
+}
+
+// Apply .btn styles to makeSubmission block plugin
+.pkp_block.block_make_submission {
+
+    a {
+        &:extend(.btn);
+        &:extend(.btn-default);
+    }
+}
+
+// Style the footer
+footer[role="contentinfo"] {
+    background: @gray-lighter; // bootstrap variable
+    padding: 2em;
+    margin-top: 4em;
+}
+
+// Style the PDF and HTML view
+.header_view {
+	z-index: 2;
+	background: @navbar-default-bg;
+  &:extend(.navbar all);
+  &:extend(.navbar-default all);
+
+  a {
+    display: inline-block;
+    padding: @navbar-padding-vertical @navbar-padding-horizontal;
+    color: @navbar-default-link-color;
+
+    &:hover,
+    &:focus {
+        color: @navbar-default-link-hover-color;
+        background: @navbar-default-link-hover-bg;
+    }
+
+    &:active {
+        color: @navbar-default-link-active-color;
+        background: @navbar-default-link-active-bg;
+    }
+
+    &:disabled {
+        color: @navbar-default-link-disabled-color;
+        background: @navbar-default-link-disabled-bg;
+    }
+  }
+
+  .return,
+  .download .label {
+    &:extend(.sr-only all);
+  }
+
+  .download {
+    &:extend(.pull-right all);
+  }
+}
+
+.galley_view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: hidden;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		padding-top: @navbar-height;
+		border: none;
+	}
+
+	&.galley_view_with_notice {
+
+		iframe {
+			padding-top: @navbar-height * 2;
+		}
+	}
+
+	.galley_view_notice {
+		position: absolute;
+		top: @navbar-height;
+		width: 100%;
+		height: @navbar-height;
+		background: @brand-danger;
+	}
+
+	.galley_view_notice_message {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Hide the citation number in the CSL output
+#citationOutput .csl-left-margin {
+  display: none;
+}
+
+// Forms
+//
+// Apply to a span that marks required form fields.
+.form-control-required {
+  color: @brand-danger;
+}
+
+.references a {
+  // Avoid long links overflow
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
+
+.homepage-image {
+  position: relative;
+  width: 100%;
+  height: 30% !important;
+  overflow: hidden;
+}
+
+.homepage-image::after {
+  content: "";
+  display: block;
+  padding-top: 66.66%; /* Aspect ratio 3:2 for landscape */
+}
+
+.homepage-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover; /* Crop image to fit */
+}
+.news-section {
+    margin-top: 7px !important;
+}
+
+.action-icons {
+    margin-top: -20px !important;
+    text-align: center !important;
+    background-color: #fff !important;
+    border-bottom: 1px solid #ccc;
+    
+}
+.column-separator {
+    border-right: 1px solid #ccc;
+}
+.footer {
+    background: linear-gradient(to right, #2A2666, #E537C2) !important;
+    color: #fff !important;
+}
+.overlay-text {
+    position: absolute;
+    bottom: 10px; /* Adjust the distance from the bottom as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
+    color: #fff; /* Text color */
+    padding: 10px; /* Padding for the text */
+}
+.container-fluid {
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
