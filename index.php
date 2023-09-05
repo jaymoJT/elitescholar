@@ -5,7 +5,7 @@
  */
 
 /**
- * @file plugins/themes/default/index.php
+ * @file plugins/themes/elitescholar/index.php
  *
  * Copyright (c) 2014-2023 Simon Fraser University Library
  * Copyright (c) 2003-2023 John Willinsky
@@ -16,8 +16,6 @@
  *
  */
 
-require_once('ElitescholarThemePlugin.inc.php');
+namespace APP\plugins\themes\elitescholar;
 
 return new ElitescholarThemePlugin();
-
-?>

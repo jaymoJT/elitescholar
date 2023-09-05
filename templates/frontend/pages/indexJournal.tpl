@@ -33,30 +33,34 @@
                 {include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
                
                 {assign var="issueDetailsCol" value="12"}
-
+        		
+				
         		{* Issue cover image and description*}
-        		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-        		{if $issueCover}
-        			{assign var="issueDetailsCol" value="8"}
-        			<div class="thumbnail">
-        				<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
-        					<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
-        				</a>
-        			</div>
-        		{/if}
-        		
-        		
-        		{* Published date *}
-    			{if $issue->getDatePublished()}
-    				<p class="published">
-    					<strong>
-    						{translate key="submissions.published"}:
-    					</strong>
-    					{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
-    				</p>
-    			{/if}
-    			
-    			
+				{if $issue}
+					{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+					
+					{if $issueCover}
+						{assign var="issueDetailsCol" value="8"}
+						<div class="thumbnail">
+							<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
+								<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
+							</a>
+						</div>
+					{/if}
+
+					{* Published date *}
+					{if $issue->getDatePublished()}
+						<p class="published">
+							<strong>
+								{translate key="submissions.published"}:
+							</strong>
+							{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
+						</p>
+					{/if}
+
+				{/if}
+				
+   			
                 
             
             </div>

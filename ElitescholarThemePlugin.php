@@ -13,7 +13,15 @@
  * @brief Default theme
  */
 
-import('lib.pkp.classes.plugins.ThemePlugin');
+
+namespace APP\plugins\themes\elitescholar;
+
+use APP\core\Application;
+use APP\i18n\AppLocale;
+use PKP\config\Config;
+use PKP\facades\Locale;
+use PKP\plugins\ThemePlugin;
+
 class ElitescholarThemePlugin extends ThemePlugin {
 	/**
 	 * Initialize the theme
@@ -21,16 +29,19 @@ class ElitescholarThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
-		
+
+	
 
 		// Determine the path to the glyphicons font in Bootstrap
 		$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
+        	
 
-        	$this->addStyle('bootstrap', 'styles/bootstrap.less');
- 			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
+		$this->addStyle('bootstrap', 'styles/bootstrap.less');
+		$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
 
-		$locale = AppLocale::getLocale();
-		if (AppLocale::getLocaleDirection($locale) === 'rtl') {
+		$locale = Locale::getLocale();
+		$localeMetadata = Locale::getMetadata($locale);
+		if ($localeMetadata->isRightToLeft() === 'rtl') {
 			$this->addStyle('bootstrap-rtl', 'styles/bootstrap-rtl.min.css');
 		}
 
@@ -67,4 +78,8 @@ class ElitescholarThemePlugin extends ThemePlugin {
 	function getDescription() {
 		return __('plugins.themes.elitescholar.description');
 	}
+}
+
+if (!PKP_STRICT_MODE) {
+    class_alias('\APP\plugins\themes\elitescholar\ElitescholarThemePlugin', '\ElitescholarThemePlugin');
 }
