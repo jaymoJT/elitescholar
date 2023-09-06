@@ -40,38 +40,74 @@
 			{* User profile, login, etc, navigation menu*}
 			<div class="top-bar">
 			    <div class="container-fluid">
-			           
+			            
     					<nav aria-label="{translate|escape key="common.navigation.user"}" class="top-nav">
     						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
     					</nav>
 			    </div>
 			</div><!-- .container-fluid -->
 			<div class="container-fluid header-banner">
-			    <div class="row">
-			        <div class="col-xs-6">
-			            <div class="block_content_wrapper">
-			                 {* Logo or site title. Only use <h1> heading on the homepage.
-        					   Otherwise that should go to the page title. *}
-        					{if $requestedOp == 'index'}
-        						<h1 class="site-name">
-        					{else}
-        						<div class="site-name">
-        					{/if}
-        					
-        					
-    						{capture assign="homeUrl"}
+
+
+			{capture assign="homeUrl"}
     							{url page="index" router=$smarty.const.ROUTE_PAGE}
     						{/capture}
     						{if $displayPageHeaderLogo}
-    							<a href="{$homeUrl}" class="navbar-brand navbar-brand-logo">
-    								<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} class="img-responsive" >
-    							</a>
+
+								<div class="block_content_wrapper">
+
+								
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="nav-image">
+												<a href="{$homeUrl}">
+													<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} class="img-responsive" >
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="journal-title">
+											    <h1><a href="{$homeUrl}" class="title-link"> {$displayPageHeaderTitle}</a></h1> 
+											</div>
+										</div>
+									</div>
+				                </div>
     						{elseif $displayPageHeaderTitle}
-    							<a href="{$homeUrl}" class="navbar-brand">{$displayPageHeaderTitle}</a>
+    							<div class="block_content_wrapper">
+									<div class="row">
+										<div class="col-xs-4">
+											<div class="journal-title py-5">
+											    <h1><a href="{$homeUrl}" class="title-link"> {$displayPageHeaderTitle}</a></h1> 
+										    </div>
+										</div>
+										<div class="col-xs-8">
+											<div class="journal-title py-5">
+											    
+											</div>
+										</div>
+									</div>
+				                </div>
     						{else}
-    							<a href="{$homeUrl}" class="navbar-brand">
-    								<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
-    							</a>
+
+								<div class="block_content_wrapper">
+									<div class="row">
+										<div class="col-xs-4">
+											<div class="nav-image">
+											    <a href="{$homeUrl}">
+											        <img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
+										        </a>
+											</div>
+										</div>
+										<div class="col-xs-8">
+											<div class="journal-title py-5">
+											    
+											</div>
+										</div>
+									</div>
+				                </div>
+
+
+    							
     						{/if}
     						
     						
@@ -80,10 +116,9 @@
         					{else}
         						</div>
         					{/if}
-			            </div>
-			        </div>
-			        <div class="col-xs-6"></div>
-			    </div>
+
+			    
+
 			    
 			</div>
             

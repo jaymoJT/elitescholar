@@ -16,6 +16,6 @@
  *
  */
 
-namespace APP\plugins\themes\elitescholar;
+namespace APP\plugins\themes\elitescholar ;
 
 return new ElitescholarThemePlugin();

@@ -30,22 +30,19 @@
 	</div><!-- pkp_structure_content -->
 
 	<footer class="footer" role="contentinfo">
-
 		<div class="container">
-
 			<div class="row">
 				{if $pageFooter}
 				<div class="col-md-10">
 					{$pageFooter}
 				</div>
 				{/if}
-
+				
 				<div class="col-md-2" role="complementary">
 					<a href="{url page="about" op="aboutThisPublishingSystem"}">
                         <img class="img-responsive" alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
                     </a>
 				</div>
-
 			</div> <!-- .row -->
 		</div><!-- .container -->
 	</footer>

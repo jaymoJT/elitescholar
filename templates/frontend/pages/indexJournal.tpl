@@ -37,32 +37,37 @@
 				
         		{* Issue cover image and description*}
 				{if $issue}
-					{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+						{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+						
+						{if $issueCover}
+							{assign var="issueDetailsCol" value="8"}
+							<div class="thumbnail">
+								<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
+									<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
+								</a>
+							</div>
+						{/if}
+
+						{* Published date *}
+						{if $issue->getDatePublished()}
+							<p class="published">
+								<strong>
+									{translate key="submissions.published"}:
+								</strong>
+								{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
+							</p>
+						{/if}
 					
-					{if $issueCover}
-						{assign var="issueDetailsCol" value="8"}
-						<div class="thumbnail">
-							<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
-								<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
-							</a>
-						</div>
-					{/if}
-
-					{* Published date *}
-					{if $issue->getDatePublished()}
-						<p class="published">
-							<strong>
-								{translate key="submissions.published"}:
-							</strong>
-							{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
-						</p>
-					{/if}
-
+				{else}
+					<h2>Issues Coming soon</h2>
+					<a class="btn btn-primary" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="about" op="submissions"}">Submit Your Manuscript</a>	
+					
+					<hr>
+					<h2>Editorial Team</h2>	
+						{$currentJournal->getLocalizedData('editorialTeam')}	
+					
 				{/if}
 				
-   			
-                
-            
             </div>
             <div class="col-md-8">
                 {call_hook name="Templates::Index::journal"}
@@ -94,7 +99,7 @@
     					{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
     						{break}
     					{/if}
-    					{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+    					{include file="frontend/objects/announcement_summary.tpl" heading="h2"}
     				    {/foreach}
     		        </div>
             	{/if}

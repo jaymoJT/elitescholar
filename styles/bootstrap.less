@@ -33,6 +33,25 @@ body{
     background: linear-gradient(to right, #2A2666, #E537C2, #2A2666) !important;
     color: #fff !important;
 }
+.header-banner {
+   height:20rem !important;
+   background-color:#fff !important;
+}
+.nav-image img {
+    max-height:18rem !important;
+}
+.journal-title {
+    text-align: right !important;
+    margin: 0; /* Reset default margins */
+}
+
+/* Media query for smaller devices (e.g., screens narrower than 768px) */
+@media (max-width: 768px) {
+    .journal-title {
+        font-size: 1.5rem !important; /* Adjust font size for h3 on smaller devices */
+    }
+}
+
 .btn-primary {
     background: #2A2666;
     color: #fff !important;
@@ -47,7 +66,10 @@ body{
     color: #fff;
     
 }
-
+.title-link {
+    text-decoration: none !important;
+    color:#2A2666 !important;
+}
 
 // Collapse margins on the site name in the header
 .navbar-header .site-name {
@@ -67,7 +89,7 @@ body{
     color: @navbar-default-link-color;
     font-size: 15px !important;
     font-weight: bold !important;
-    line-height: 1.5rem;
+    line-height: 2.5rem;
 
     &:hover,
     &:focus,
@@ -84,10 +106,6 @@ body{
 
 #main-navigation > li > a {
     text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 800;
-    padding-bottom: 14px;
-    padding-top: 14px;
     color: #fff !important;
 }
 #navigationUser > li > a {
@@ -227,7 +245,8 @@ h6.media-heading {
 
     .title {
       
-    background: #2A2666;
+    // background: #2A2666;
+    background: linear-gradient(to right, #2A2666, #E537C2, #2A2666) !important;
     color: #fff !important;
     //   padding-top: -2px !important;
     //   padding-left: 10px;
