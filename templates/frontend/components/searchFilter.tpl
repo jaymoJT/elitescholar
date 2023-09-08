@@ -1,7 +1,7 @@
 {**
  * templates/frontend/components/searchFilter.tpl
  *
- * Copyright (c) 2014-2023 Simon Fraser University Library
+ * Copyright (c) 2014-2023 Simon Fraser University
  * Copyright (c) 2003-2023 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
@@ -18,7 +18,7 @@
  * @uses $startYear string Required for filter type "date".
  * @uses $endYear string Required for filter type "date".
  *}
-{if empty($filterValue) || ($filterType == "date" && $filterValue == "--")}
+ {if empty($filterValue) || ($filterType == "date" && $filterValue == "--")}
 	{assign var="isEmptyFilter" value=1}
 {else}
 	{assign var="isEmptyFilter" value=0}

@@ -14,7 +14,7 @@
  * @uses $total int The total number of items available
  *}
 
-{if $prevUrl || $nextUrl}
+ {if $prevUrl || $nextUrl}
 	<nav aria-label="{translate|escape key="common.pagination.label"}">
 		<ul class="pager">
 			{if $prevUrl}

@@ -1,7 +1,7 @@
 {**
  * templates/frontend/components/registrationFormContexts.tpl
  *
- * Copyright (c) 2014-2023 Simon Fraser University Library
+ * Copyright (c) 2014-2023 Simon Fraser University
  * Copyright (c) 2003-2023 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
@@ -19,7 +19,7 @@
 
 {* Only display the context role selection when registration is taking place
    outside of the context of any one journal/press. *}
-{if !$currentContext}
+   {if !$currentContext}
 
 	{* Allow users to register for any journal/press on this site *}
 	<fieldset name="contexts">
@@ -87,7 +87,7 @@
 		<div class="context_privacy {if $isSelected}context_privacy_visible{/if}">
 			<label>
 				<input type="checkbox" name="privacyConsent[{$contextId}]" id="privacyConsent[{$contextId}]" value="1"{if $privacyConsent[$contextId]} checked="checked"{/if}>
-				{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE context=$context->getPath() page="about" op="privacy"}{/capture}
+				{capture assign="privacyUrl"}{url router=\PKP\core\PKPApplication::ROUTE_PAGE context=$context->getPath() page="about" op="privacy"}{/capture}
 				{translate key="user.register.form.privacyConsentThisContext" privacyUrl=$privacyUrl}
 			</label>
 		</div>

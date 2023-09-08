@@ -36,7 +36,7 @@
 
 		{* Header *}
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
-
+			
 			{* User profile, login, etc, navigation menu*}
 			<div class="top-bar">
 			    <div class="container-fluid">
@@ -49,8 +49,8 @@
 			<div class="container-fluid header-banner">
 
 
-			{capture assign="homeUrl"}
-    							{url page="index" router=$smarty.const.ROUTE_PAGE}
+			                {capture assign="homeUrl"}
+				                {url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
     						{/capture}
     						{if $displayPageHeaderLogo}
 

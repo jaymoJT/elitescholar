@@ -38,4 +38,25 @@ msgstr "Main Article Content"
 msgid "plugins.themes.elitescholar.article.details"
 msgstr "Article Details"
 
+msgid "plugins.themes.elitescholar.option.displayStats.label"
+msgstr "Usage statistics display options"
+
+msgid "plugins.themes.elitescholar.option.displayStats.none"
+msgstr "Do not display submission usage statistics chart for reader."
+
+msgid "plugins.themes.elitescholar.option.displayStats.bar"
+msgstr "Use bar type of the chart for usage statistics display."
+
+msgid "plugins.themes.elitescholar.option.displayStats.line"
+msgstr "Use line type of the chart for usage statistics display."
+
+msgid "plugins.themes.elitescholar.displayStats.monthInitials"
+msgstr "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+
+msgid "plugins.themes.elitescholar.displayStats.downloads"
+msgstr "Downloads"
+
+msgid "plugins.themes.elitescholar.displayStats.noStats"
+msgstr "Download data is not yet available."
+
 

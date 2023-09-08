@@ -1,7 +1,7 @@
 {**
  * templates/frontend/components/editLink.tpl
  *
- * Copyright (c) 2014-2023 Simon Fraser University Library
+ * Copyright (c) 2014-2023 Simon Fraser University
  * Copyright (c) 2003-2023 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
@@ -15,7 +15,7 @@
  * @uses SectionTitleKey string A key that must be translated to get the
  *       $sectionTitle
  *}
-{if in_array(ROLE_ID_MANAGER, (array) $userRoles)}
+ {if in_array(\PKP\security\Role::ROLE_ID_MANAGER, (array) $userRoles)}
 
 	{* Render the $sectionTitle if we only have a translation key *}
 	{if $sectionTitleKey}

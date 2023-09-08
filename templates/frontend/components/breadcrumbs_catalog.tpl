@@ -15,26 +15,26 @@
  * @uses $currentTitleKey string Translation key for title of current page.
  *}
 
-<nav class="cmp_breadcrumbs cmp_breadcrumbs_catalog" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="breadcrumb">
-		<li>
-			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
-				{translate key="common.homepageNavigationLabel"}
-			</a>
-		</li>
-		{if $parent}
-			<li>
-				<a href="{url op=$type path=$parent->getPath()}">
-					{$parent->getLocalizedTitle()|escape}
-				</a>
-			</li>
-		{/if}
-		<li class="active">
-			{if $currentTitleKey}
-				{translate key=$currentTitleKey}
-			{else}
-				{$currentTitle|escape}
-			{/if}
-		</li>
-	</ol>
+ <nav class="cmp_breadcrumbs cmp_breadcrumbs_catalog" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
+ <ol class="breadcrumb">
+	 <li>
+		 <a href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}">
+			 {translate key="common.homepageNavigationLabel"}
+		 </a>
+	 </li>
+	 {if $parent}
+		 <li>
+			 <a href="{url op=$type path=$parent->getPath()}">
+				 {$parent->getLocalizedTitle()|escape}
+			 </a>
+		 </li>
+	 {/if}
+	 <li class="active">
+		 {if $currentTitleKey}
+			 {translate key=$currentTitleKey}
+		 {else}
+			 {$currentTitle|escape}
+		 {/if}
+	 </li>
+ </ol>
 </nav>

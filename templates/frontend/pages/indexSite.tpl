@@ -10,7 +10,7 @@
  *}
  {include file="frontend/components/header.tpl"}
 
- <div id="main-site" class="page_index_site">
+ <div id="main-site" class="page_index_site">sudo apache2 stop
  
 	 {if $about}
 		 <div class="about_site">
