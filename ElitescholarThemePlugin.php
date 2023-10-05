@@ -28,6 +28,10 @@ class ElitescholarThemePlugin extends ThemePlugin {
 	 *
 	 * @return null
 	 */
+	
+
+
+
 	public function init() {
 
 	
@@ -38,7 +42,7 @@ class ElitescholarThemePlugin extends ThemePlugin {
 
 		$this->addStyle('bootstrap', 'styles/bootstrap.less');
 		$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
-
+		
 		$locale = Locale::getLocale();
 		$localeMetadata = Locale::getMetadata($locale);
 		if ($localeMetadata->isRightToLeft() === 'rtl') {
@@ -61,6 +65,9 @@ class ElitescholarThemePlugin extends ThemePlugin {
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+		
+
+
 	}
 
 	/**
@@ -70,7 +77,7 @@ class ElitescholarThemePlugin extends ThemePlugin {
 	function getDisplayName() {
 		return __('plugins.themes.elitescholar.name');
 	}
-
+	
 	/**
 	 * Get the description of this plugin
 	 * @return string

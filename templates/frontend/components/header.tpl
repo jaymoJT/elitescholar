@@ -21,10 +21,31 @@
 
 <!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">
+	    <div class="top-bar">
+		    <div class="container-fluid">
+			   <div class="row">
+			        <div class="col-xs-9">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="title-link top-bar-link" > <span  class="material-symbols-outlined ">account_balance</span> <span> Home </span></a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" class="title-link top-bar-link" ><span class="material-symbols-outlined">contact_mail</span> <span> Contact </span> </a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+					    {load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
+					</div>
+			   </div>
+			</div>
+		</div>
 
 		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.royalboots.accessible_menu.label"}">
 			<ul>
@@ -38,14 +59,7 @@
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
 			
 			{* User profile, login, etc, navigation menu*}
-			<div class="top-bar">
-			    <div class="container-fluid">
-			            
-    					<nav aria-label="{translate|escape key="common.navigation.user"}" class="top-nav">
-    						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
-    					</nav>
-			    </div>
-			</div><!-- .container-fluid -->
+			
 			<div class="container-fluid header-banner">
 
 
@@ -55,20 +69,17 @@
     						{if $displayPageHeaderLogo}
 
 								<div class="block_content_wrapper">
-
-								
+									
 									<div class="row">
-										<div class="col-xs-6">
+										<div class="col-md-6">
 											<div class="nav-image">
 												<a href="{$homeUrl}">
 													<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} class="img-responsive" >
 												</a>
 											</div>
 										</div>
-										<div class="col-xs-6">
-											<div class="journal-title">
-											    <h1><a href="{$homeUrl}" class="title-link"> {$displayPageHeaderTitle}</a></h1> 
-											</div>
+										<div class="col-md-6 div-center">
+										    
 										</div>
 									</div>
 				                </div>

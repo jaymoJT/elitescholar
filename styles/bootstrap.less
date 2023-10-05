@@ -30,12 +30,15 @@ body{
 }
 
 .top-bar {
-    background: linear-gradient(to right, #000080, #1974de, #000080) !important;
-    color: #fff !important;
+    // background: linear-gradient(to right, #000080, #1974de, #000080) !important;
+    background-color: #e3e3e9;
+    // color: #fff !important;
+    height: 50% !important;
 }
 .header-banner {
    height:20rem !important;
-   background-color:#fff !important;
+   background-color:#fff!important;
+//    background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, rgb(248,248,248),rgb(248,248,248));
 }
 .nav-image img {
     max-height:18rem !important;
@@ -62,7 +65,8 @@ body{
 }
 
 .primary-menu {
-    background: linear-gradient(to right, #000080, #1974de, #000080) !important;
+    // background: linear-gradient(to right, #000080, #1974de, #000080) !important;
+    background: linear-gradient(to right, #000080, #000080, #000080) !important;
     color: #fff;
     
 }
@@ -111,7 +115,7 @@ body{
     color: #fff !important;
 }
 #navigationUser > li > a {
-    color: #fff !important;
+    color: #000080 !important;
 }
 
 // Page header subtitles
@@ -464,3 +468,57 @@ footer[role="contentinfo"] {
     margin-right: auto;
     margin-left: auto;
 }
+.div-center {
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+ .navbrand-link {
+    position: relative !important;
+    // display: block !important;
+    padding: 50% 50% !important;
+ }
+ .material-symbols-outlined .fill{
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48 !important;
+  }
+  #material-text {
+    font-size:160%;
+    line-height: 150%;
+    font-weight:bold !important;
+    margin-top:1% !important;
+  }
+  
+  #material-text-2 {
+    font-size:130%;
+    line-height: 150%;
+    font-weight:bold !important;
+    margin-top:2% !important;
+  }
+
+  .material-symbols-outlined {
+      display: inline-flex;
+      vertical-align: top;
+  }
+.top-bar-link {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+ .slider-container {
+            overflow: hidden;
+        }
+
+        .slider {
+            white-space: nowrap;
+            animation: slide 10s linear infinite;
+        }
+
+        .slider img {
+            width: 25%; /* Set the width of each column to 25% for 4 columns */
+            display: inline-block;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
