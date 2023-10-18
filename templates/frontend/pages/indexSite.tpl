@@ -32,10 +32,13 @@
 				{assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
 				{assign var="description" value=$journal->getLocalizedDescription()}
 	            <a href="{$url|escape}">
-					<img class="media-object" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape}"{/if}>
+					<img class="media-object journal-slide-image" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape}"{/if}>
+						
 				</a>
 			{/foreach}
 		</div>
+		<div class="slider-control prev" onclick="moveSlider(-1)">&#9665;</div>
+        <div class="slider-control next" onclick="moveSlider(1)">&#9655;</div>
     </div>
 	
 {/if}
@@ -79,4 +82,23 @@
  
  </div><!-- .page -->
  
+ <script>
+
+
+ var currentIndex = 0;
+
+ function moveSlider(direction) {
+	 currentIndex += direction;
+	 var slider = document.querySelector(".slider");
+	 var images = slider.querySelectorAll("img");
+	 if (currentIndex < 0) {
+		 currentIndex = images.length - 1;
+	 } else if (currentIndex >= images.length) {
+		 currentIndex = 0;
+	 }
+	 var offset = -currentIndex * (100 / images.length);
+	 slider.style.transform = "translateX(" + offset + "%)";
+ }
+   
+</script>
  {include file="frontend/components/footer.tpl"}

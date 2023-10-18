@@ -78,8 +78,14 @@
 												</a>
 											</div>
 										</div>
-										<div class="col-md-6 div-center">
-										    
+										<div class="col-md-6">
+										    <div class=" text-center ">
+                                                 {* Search form *}
+                            						{if $currentContext}
+                            							{include file="frontend/components/searchForm_simple.tpl"}
+                            					    {/if}
+                                            </div>
+										   
 										</div>
 									</div>
 				                </div>
@@ -154,12 +160,7 @@
 						{* Primary navigation menu for current application *}
 						{$primaryMenu}
 
-						{* Search form *}
-						{if $currentContext}
-							<div class="pull-md-right">
-								{include file="frontend/components/searchForm_simple.tpl"}
-							</div>
-						{/if}
+						
 					</nav>
 				{/if}
         
