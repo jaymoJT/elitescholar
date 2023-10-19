@@ -32,8 +32,8 @@
 			   <div class="row">
 			        <div class="col-xs-7">
 					    <div class="top-bar-link">
-						    <a href="#" class="title-link"><span class="glyphicon glyphicon-home"> Home</span></a> &nbsp; &nbsp;
-							<a href="#" class="title-link"><span class="glyphicon glyphicon-envelope"> Contact</span></a> 
+						    <a href="#"><span class="glyphicon glyphicon-home title-link-light"> Home</span></a> &nbsp; &nbsp;
+							<a href="#"><span class="glyphicon glyphicon-envelope title-link-light"> Contact</span></a> 
 						</div>
 					</div>
 					<div class="col-xs-5">
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 
-		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.royalboots.accessible_menu.label"}">
+		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.elitescholar.accessible_menu.label"}">
 			<ul>
 			  <li><a href="#main-navigation">{translate|escape key="plugins.themes.elitescholar.accessible_menu.main_navigation"}</a></li>
 			  <li><a href="#main-content">{translate|escape key="plugins.themes.elitescholar.accessible_menu.main_content"}</a></li>
@@ -167,5 +167,5 @@
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container-fluid">
 		    <div class="row">
-			<main class="pkp_structure_main col-md-9 column-separator" role="main">
+			<main class="pkp_structure_main col-md-9 " role="main">
 

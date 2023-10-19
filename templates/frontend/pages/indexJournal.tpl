@@ -27,46 +27,51 @@
 
 <div id="main-content" class="page_index_journal">
     <div class="row">
-            <div class="col-md-4 column-separator">
-                
-                <h2 class="title">Current Issue</h2>
-                {include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
-               
-                {assign var="issueDetailsCol" value="12"}
+            <div class="col-md-4">
+			    <div class="panel panel-default">
+				   <div class="panel-heading">
+				       Current Issue
+				   </div>
+				   <div class="panel-body">
+
+				        {assign var="issueDetailsCol" value="12"}
         		
 				
-        		{* Issue cover image and description*}
-				{if $issue}
-						{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-						
-						{if $issueCover}
-							{assign var="issueDetailsCol" value="8"}
-							<div class="thumbnail">
-								<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
-									<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
-								</a>
-							</div>
-						{/if}
+						{* Issue cover image and description*}
+						{if $issue}
+								{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+								
+								{if $issueCover}
+									{assign var="issueDetailsCol" value="8"}
+									<div class="thumbnail">
+										<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
+											<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
+										</a>
+									</div>
+								{/if}
 
-						{* Published date *}
-						{if $issue->getDatePublished()}
-							<p class="published">
-								<strong>
-									{translate key="submissions.published"}:
-								</strong>
-								{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
-							</p>
+								{* Published date *}
+								{if $issue->getDatePublished()}
+									<p class="published">
+										<strong>
+											{translate key="submissions.published"}:
+										</strong>
+										{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
+									</p>
+								{/if}
+							
+						{else}
+							<h2>Issues Coming soon</h2>
+							<a class="btn btn-primary" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="about" op="submissions"}">Submit Your Manuscript</a>	
+							
+							<hr>
+							<h2>Editorial Team</h2>	
+								{$currentJournal->getLocalizedData('editorialTeam')}	
+							
 						{/if}
-					
-				{else}
-					<h2>Issues Coming soon</h2>
-					<a class="btn btn-primary" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="about" op="submissions"}">Submit Your Manuscript</a>	
-					
-					<hr>
-					<h2>Editorial Team</h2>	
-						{$currentJournal->getLocalizedData('editorialTeam')}	
-					
-				{/if}
+				   
+				   </div>
+				</div>
 				
             </div>
             <div class="col-md-8">
@@ -74,7 +79,7 @@
             
             	{if $homepageImage}
             		<div class="homepage-image">
-            			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+            			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}" style="border-radius:8px !important;">
             			
             			{if $journalDescription}
             			<div class="overlay-text">
@@ -88,7 +93,7 @@
             </div>
         </div>
     
-        <div class="container-fluid">
+        <div class="row">
             <hr>
             <div class="Announcements">
             {* Announcements *}
@@ -106,25 +111,23 @@
             </div>
             <hr>
             
-            <div class="current_issue">
-            {* Latest issue *}
-            	{if $issue}
-            		<section class=" current_issue">
-            			
-            			<div class="block_content_wrapper">
-            			    <h2>{translate key="journal.currentIssue"}</h2>
-            			    <p class="current_issue_title lead">
-            				{$issue->getIssueIdentification()|strip_unsafe_html}
-            			</p>
-            			{include file="frontend/objects/issue_toc.tpl"}
-            			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="btn btn-primary read-more">
-            				{translate key="journal.viewAllIssues"}
-            				<span class="glyphicon glyphicon-chevron-right"></span>
-            			</a>
-            			</div>
-            			
-            		</section>
-            	{/if}
+            <div class=" panel panel-default">
+			   <div class="panel-body">
+			        {* Latest issue *}
+					{if $issue}
+						<section class=" current_issue">
+							<div class="block_content_wrapper">
+							   
+							{include file="frontend/objects/issue_toc.tpl"}
+							<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="btn btn-primary read-more">
+								{translate key="journal.viewAllIssues"}
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+							</div>
+						</section>
+					{/if}
+			   </div>
+            
             </div>
             
             {* Additional Homepage Content *}
