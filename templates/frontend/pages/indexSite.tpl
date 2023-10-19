@@ -12,10 +12,14 @@
 
  <div id="main-site" class="page_index_site">
 
- <div class="jumbotron">
- <h1>Hello, world!</h1>
- <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+ <div class="jumbotron homepage-banner">
+	{if $about}
+		<div class="about_site">
+			{$about}
+		</div>
+	{/if}
+ 
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 	 
 
@@ -25,22 +29,53 @@
 	</div>
 
 {else}
-	<div class="slider-container">
-		<div class="slider">
-			{foreach from=$journals item=journal}
-				{capture assign="url"}{url journal=$journal->getPath()}{/capture}
-				{assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
-				{assign var="description" value=$journal->getLocalizedDescription()}
-	            <a href="{$url|escape}">
-					<img class="media-object journal-slide-image" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape}"{/if}>
-						
-				</a>
-			{/foreach}
-		</div>
-		<div class="slider-control prev" onclick="moveSlider(-1)">&#9665;</div>
-        <div class="slider-control next" onclick="moveSlider(1)">&#9655;</div>
-    </div>
-	
+	<div class="title-section">
+	    <h3>Published Journals</h3> <hr>
+	</div>
+	<ul class="media-list">
+		{foreach from=$journals item=journal}
+			{capture assign="url"}{url journal=$journal->getPath()}{/capture}
+			{assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
+			{assign var="description" value=$journal->getLocalizedDescription()}
+			<li class="media">
+				{if $thumb}
+					<div class="media-left">
+						<a href="{$url|escape}">
+							<img class="media-object" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape}"{/if}>
+						</a>
+					</div>
+				{/if}
+
+				<div class="media-body">
+					<h3 class="media-heading">
+						<a href="{$url|escape}" rel="bookmark" class="journal-title">
+							{$journal->getLocalizedName()}
+						</a>
+					</h3>
+					{if $description}
+						<div class="description">
+							{$description|nl2br}
+						</div>
+					{/if}
+					<ul class="nav nav-pills">
+						<li class="view">
+							<a href="{$url|escape}">
+								{translate key="site.journalView"}
+							</a>
+						</li>
+						<li class="current">
+							<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
+								{translate key="site.journalCurrent"}
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<br>
+			<hr>
+			<br>
+		{/foreach}
+	</ul>
 {/if}
 
 

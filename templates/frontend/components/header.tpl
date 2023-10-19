@@ -30,17 +30,13 @@
 	    <div class="top-bar">
 		    <div class="container-fluid">
 			   <div class="row">
-			        <div class="col-xs-9">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="title-link top-bar-link" > <span  class="material-symbols-outlined ">account_balance</span> <span> Home </span></a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" class="title-link top-bar-link" ><span class="material-symbols-outlined">contact_mail</span> <span> Contact </span> </a>
-							</div>
+			        <div class="col-xs-7">
+					    <div class="top-bar-link">
+						    <a href="#" class="title-link"><span class="glyphicon glyphicon-home"> Home</span></a> &nbsp; &nbsp;
+							<a href="#" class="title-link"><span class="glyphicon glyphicon-envelope"> Contact</span></a> 
 						</div>
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-5">
 					    {load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 					</div>
 			   </div>
@@ -92,12 +88,12 @@
     						{elseif $displayPageHeaderTitle}
     							<div class="block_content_wrapper">
 									<div class="row">
-										<div class="col-xs-4">
+										<div class="col-md-6">
 											<div class="journal-title py-5">
 											    <h1><a href="{$homeUrl}" class="title-link"> {$displayPageHeaderTitle}</a></h1> 
 										    </div>
 										</div>
-										<div class="col-xs-8">
+										<div class="col-md-6">
 											<div class="journal-title py-5">
 											    
 											</div>
