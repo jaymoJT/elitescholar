@@ -1,0 +1,5 @@
+<setting name="journalLogo">
+  <label>Journal Logo</label>
+  <description>Upload a logo for your journal.</description>
+  <type>image</type>
+</setting>

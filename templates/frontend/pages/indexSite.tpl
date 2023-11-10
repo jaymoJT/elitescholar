@@ -20,7 +20,7 @@
 		
 	{/if}
  
-    <p><a class="btn btn-primary btn-lg" href="{$loginUrl}" role="button">Learn more</a></p>
+    <a class="btn btn-primary btn-lg" href="https://www.royalliteglobal.com/index.php/index/login" role="button">Publish</a>
 </div>
 	 
 

@@ -28,6 +28,38 @@
 	</div><!-- pkp_structure_content -->
 	
 	<footer class="footer" role="contentinfo">
+
+
+
+
+
+	<div class="pre-footer">
+       <div class="container">
+            <div class="row">
+                <div class="col-md-3 column-separator">
+                    <h4>Mobile Friendly</h4>
+                    <p class="footer-p">Our system is responsive to enable easy reading from any device.</p>
+                </div>
+                <div class="col-md-3 column-separator"> 
+                    <h4>Rigorous Peer Process</h4>
+                    <p class="footer-p">We ensure the research we publish is of the highest quality.</p>
+                </div>
+                <div class="col-md-3 column-separator"> 
+                    <h4>Fast Publishing</h4>
+                    <p class="footer-p">Your research will be available to the scientific community as soon as possible.</p>
+                </div>
+                <div class="col-md-3 column-separator">
+                    <h4>Open Access</h4>
+                    <p class="footer-p">We offer open access so your research can be freely accessed by all readers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+
+
 		<div class="container">
 			<div class="row">
 				{if $pageFooter}
@@ -36,11 +68,7 @@
 				</div>
 				{/if}
 				
-				<div class="col-md-2" role="complementary">
-					<a href="{url page="about" op="aboutThisPublishingSystem"}">
-                        <img class="img-responsive" alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
-                    </a>
-				</div>
+				
 			</div> <!-- .row -->
 		</div><!-- .container -->
 	</footer>

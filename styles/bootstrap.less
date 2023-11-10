@@ -29,15 +29,21 @@ body{
   
 }
 
+ul, li {
+    list-style-type: none !important;
+  }
+
 .top-bar {
     // background: linear-gradient(to right, #000080, #1974de, #000080) !important;
     background-color: #000080;
+    // background-color: #FF9100;
     color: #fff !important;
     height: 50% !important;
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 }
 .header-banner {
-   height:20rem !important;
-   background-color:#fff!important;
+   height:18rem !important;
+   
 //    background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, rgb(248,248,248),rgb(248,248,248));
 }
 .nav-image img {
@@ -62,6 +68,7 @@ body{
 }
 .top-bar #nav .li >a {
     color: #fff !important;
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 }
 
 .primary-menu {
@@ -74,12 +81,15 @@ body{
     text-decoration: none !important;
     color:#000080 !important;
 }
+li {
+    text-decoration: none !important;
+}
 .title-link-light {
     text-decoration: none !important;
     color:#fff !important;
     font-size: 15px !important;
-    font-weight: bold !important;
     line-height: 2.5rem !important;
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif !important;
 }
 
 // Collapse margins on the site name in the header
@@ -294,10 +304,7 @@ h6.media-heading {
       &:extend(.panel-body);
     }
 }
-.block_content_wrapper {
-    padding: 5px !important;
-    background-color: transparent !important;
-}
+
 
 // Apply bootstrap table style to .cmp_table elements
 .cmp_table {
@@ -459,8 +466,14 @@ footer[role="contentinfo"] {
     border-right: 1px solid #ccc;
 }
 .footer {
-    background: linear-gradient(to right, #000080, #1974de, #000080) !important;
+    background: linear-gradient(to right, #000080, #000080, #000080) !important;
     color: #fff !important;
+}
+.footer-p {
+    color:#bfbfbf !important;
+}
+.column-separator {
+    border-right: 1px solid #ccc;
 }
 .overlay-text {
     position: absolute;
@@ -599,3 +612,28 @@ footer[role="contentinfo"] {
 .journal-title {
     color:#333 !important;
 }
+.right-header-column {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    // bottom:10px;
+    opacity: 100%;
+   background: url(https://antonytrivet.co.ke/wp-content/uploads/2016/03/Uhuru-Park-View-Point-Nairobi-Kenyas-Capital-City-By-Antony-Trivet-Travel-Photographers-2.jpg) #36c no-repeat center center;
+}
+.banner-image img{
+    
+    max-height:18rem !important;
+}
+.row {
+    bottom: 0;
+}
+.img-full-width {
+    width: 100% !important;
+    height: 18rem !important;
+}
+.hero-banner {
+    background-color: #fff !important;
+}
+

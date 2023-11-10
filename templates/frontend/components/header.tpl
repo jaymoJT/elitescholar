@@ -32,8 +32,8 @@
 			   <div class="row">
 			        <div class="col-xs-7">
 					    <div class="top-bar-link">
-						    <a href="#"><span class="glyphicon glyphicon-home title-link-light"> Home</span></a> &nbsp; &nbsp;
-							<a href="#"><span class="glyphicon glyphicon-envelope title-link-light"> Contact</span></a> 
+						    <a href="#" class="title-link-light">| Home</a> &nbsp;
+							<a href="#" class="title-link-light">| Contact |</a> 
 						</div>
 					</div>
 					<div class="col-xs-5">
@@ -56,35 +56,29 @@
 			
 			{* User profile, login, etc, navigation menu*}
 			
-			<div class="container-fluid header-banner">
+			<div class="container-fluid hero-banner">
 
 
 			                {capture assign="homeUrl"}
 				                {url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
     						{/capture}
     						{if $displayPageHeaderLogo}
-
-								<div class="block_content_wrapper">
+								
 									
 									<div class="row">
-										<div class="col-md-6">
+										<div class="col-md-7">
 											<div class="nav-image">
 												<a href="{$homeUrl}">
 													<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} class="img-responsive" >
 												</a>
 											</div>
 										</div>
-										<div class="col-md-6">
-										    <div class=" text-center ">
-                                                 {* Search form *}
-                            						{if $currentContext}
-                            							{include file="frontend/components/searchForm_simple.tpl"}
-                            					    {/if}
-                                            </div>
-										   
+										<div class="col-md-5">
+										    <div class="nav-image">
+											    <img src="https://new.royalliteglobal.com/images/right-banner.jpg" class="img-full-width" >
+											</div>
 										</div>
 									</div>
-				                </div>
     						{elseif $displayPageHeaderTitle}
     							<div class="block_content_wrapper">
 									<div class="row">
@@ -135,7 +129,7 @@
 			    
 			</div>
             
-            <div class="primary-menu container-fluid">
+            <div class="primary-menu ">
 				<div class="navbar-header">
 					{* Mobile hamburger menu *}
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
@@ -155,10 +149,16 @@
 					<nav id="nav-menu" class="navbar-collapse collapse" aria-label="{translate|escape key="common.navigation.site"}">
 						{* Primary navigation menu for current application *}
 						{$primaryMenu}
-
+						 
+						{* Search form *}
+						{if $currentContext}
+							{include file="frontend/components/searchForm_simple.tpl"}
+						{/if}
 						
 					</nav>
 				{/if}
+				 
+				 
         
         	</div><!-- .pkp_head_wrapper -->
 			
